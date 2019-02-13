@@ -1,3 +1,5 @@
+import org.junit.Test;
+
 /**
  * Testing class for Product object
  *
@@ -9,7 +11,9 @@ public class AnimalTest
 
     /**
      * Test the empty Animal constructor and the getters
+     * 
      */
+	@Test
     public void emptyConstructorTest() throws AssertException
     {
         // Use the default constructor
@@ -21,7 +25,18 @@ public class AnimalTest
         Assert.assertEquals(0, animal.getHeight(), 0.01);
         Assert.assertEquals(0, animal.getWeight(), 0.01);
     }
-
+	
+    
     // TODO: test full constructor, getters, and toString
+	@Test
+    public void fullConstructorTest() throws AssertException
+    {
+    	Animal animal = new Animal();
+    	String expected = "Chester, a Green-colored animal. 350.0 pounds, 40.0 inches.";
+    	String actual = animal.toString();
+    	
+    	Assert.assertEquals(expected, actual);
+    	
+    }
 }
 
