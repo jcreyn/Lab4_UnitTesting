@@ -37,5 +37,16 @@ public class AnimalTest
 	    Assert.assertEquals(350.0, animal.getHeight(), 0.01);
 	    Assert.assertEquals(40.0, animal.getWeight(), 0.01);
 	}
+	public void getColorTest() throws AssertException
+	{
+	    Animal animal = new Animal();
+	    Assert.assertEquals("unknown", animal.getColor());  
+	}
+	
+	public void toStringTest() throws AssertException
+	{
+	    Animal animal = new Animal();
+	    Assert.assertEquals("noname, a unknown-colored-colored animal. 0.0 pounds, 0.0 inches\n", animal.toString());
+	}
 }
 
