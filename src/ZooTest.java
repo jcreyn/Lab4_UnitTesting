@@ -1,42 +1,47 @@
-
 public class ZooTest {
-
 	
-	 public void emptyConstructorTest() throws AssertException
-	 	
-	 	
-	 {
-	        // Use the default constructor
-	        Animal animal = new Animal();
-
-	        // The name should be "noname", color "unknown", height and weight 0.
-	        Assert.assertEquals("unknown", animal.getColor());
-	        Assert.assertEquals("noname", animal.getName());
-	        Assert.assertEquals(0, animal.getHeight(), 0.01);
-	        Assert.assertEquals(0, animal.getWeight(), 0.01);
-	 }
-	 
-	    // TODO: test full constructor, getters, and toString
-	 
-	 // need getCapacity test. 
-	 public void getCapacityTest {
-		 	Animal animal = new Animal();
-		 	
-	 }
-	 
-	 // finish this test
-	 public void fullConstructorTest() throws AssertException
-	 {
-		 	Animal animal = new Animal();
-	 }
-	 
-	 // finish this test
-	 public void toStringTest() throws AssertException
-	 {
-		Animal a = new Animal("Green", "Chester", 350.0, 40);
-		String expected = ; // finish
-		String actual = a.toString(); 
-		Assert.assertEquals(expected, actual); //finish
-		 
-	 }
+	/**
+	 * Test the default constructor Zoo which has args intialCapacity.
+	 * @throws AssertException
+	 */
+    public void zooTest() throws AssertException
+    {
+    Zoo zoo = new Zoo(0);
+    Assert.assertEquals(0, zoo.getCapacity());
+    Assert.assertEquals(0, zoo.getAnimals());
+    Assert.assertEquals(new Animal[0], zoo.getAnimals());
+    }
+    
+    /**
+     * 
+     * @throws AssertException
+     */
+    public void expandZooTest() throws AssertException
+    {
+        Zoo newZoo = new Zoo(5);
+        newZoo.expandZoo();
+        Assert.assertEquals(10, newZoo.getCapacity());
+        
+        
+        Assert.assertEquals(new Animal[10], newZoo.getAnimals());
+        
+    }
+    
+    /**
+     * 
+     * @throws AssertException
+     */
+    public void addAnimalsTest() throws AssertException
+    {
+        Zoo newZoo = new Zoo(4);
+        Animal animal1 = new Animal("Green", "Chester", 350.0, 40);
+        Animal animal2 = new Animal("Blue", "Chad", 35.0, 4);
+        newZoo.addAnimal(animal1);
+        newZoo.addAnimal(animal2);
+        //Assert.assertEquals(new Animal[]{animal1, animal2, new Animal(), new Animal()});
+        Assert.assertEquals(new Animal[]{animal1, animal2}, newZoo.getAnimals());
+        
+        
+    }
 }
+
