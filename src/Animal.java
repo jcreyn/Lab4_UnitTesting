@@ -142,6 +142,13 @@ public class Animal
         
         // TODO: finish this...
         
-        /* return TODO; */
+        if ((otherAni.getColor() == this.getColor()) & (otherAni.getName() == this.getName()) & 
+        		(otherAni.getWeight() == this.getWeight()) & (otherAni.getHeight() == this.getHeight()))
+        		{
+            		return true;
+        		}
+        else {
+            	return false;
+        }
     }
 }

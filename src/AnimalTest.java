@@ -1,4 +1,3 @@
-import org.junit.Test;
 
 /**
  * Testing class for Product object
@@ -13,7 +12,7 @@ public class AnimalTest
      * Test the empty Animal constructor and the getters
      * 
      */
-	@Test
+
     public void emptyConstructorTest() throws AssertException
     {
         // Use the default constructor
@@ -34,19 +33,36 @@ public class AnimalTest
 	    Animal animal = new Animal("Green", "Chester", 350.0, 40);
 	    Assert.assertEquals("Green", animal.getColor());
 	    Assert.assertEquals("Chester", animal.getName());
-	    Assert.assertEquals(350.0, animal.getHeight(), 0.01);
-	    Assert.assertEquals(40.0, animal.getWeight(), 0.01);
+	    Assert.assertEquals(40.0, animal.getHeight(), 0.01);
+	    Assert.assertEquals(350.0, animal.getWeight(), 0.01);
 	}
+
 	public void getColorTest() throws AssertException
 	{
-	    Animal animal = new Animal();
-	    Assert.assertEquals("unknown", animal.getColor());  
+	   // Animal animal = new Animal();
+	    Animal animal = new Animal("Green", "Chester", 350.0, 40);
+	    Assert.assertEquals("Green", animal.getColor());  
 	}
-	
+	public void getNameTest() throws AssertException
+	{
+		Animal animal = new Animal("Green", "Chester", 350.0, 40);
+	    Assert.assertEquals("Chester", animal.getName());  
+	}
+	public void getWeightTest() throws AssertException
+	{
+		Animal animal = new Animal("Green", "Chester", 350.0, 40);
+	    Assert.assertEquals(350.0, animal.getWeight());  
+	}
+
+	public void getHeightTest() throws AssertException
+	{
+		Animal animal = new Animal("Green", "Chester", 350.0, 40.0);
+	    Assert.assertEquals(40.0, animal.getHeight());  
+	}
 	public void toStringTest() throws AssertException
 	{
 	    Animal animal = new Animal();
-	    Assert.assertEquals("noname, a unknown-colored-colored animal. 0.0 pounds, 0.0 inches\n", animal.toString());
+	    Assert.assertEquals("noname, a unknown-colored animal. 0.0 pounds, 0.0 inches\n", animal.toString());
 	}
 }
 
